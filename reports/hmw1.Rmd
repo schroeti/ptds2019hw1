@@ -1,6 +1,6 @@
 ---
 title: "hmw1"
-author: "Alex Schroeter, Rita Sefraoui, Leonard Philipossian, Simon Fornerod, David Pitteloud"
+author: "Alexandre Schroeter, Rita Sefraoui, Leonard Philipossian, Simon Fornerod, David Pitteloud"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
     html_document:
@@ -28,10 +28,13 @@ library(kableExtra)
 
 # Group Members
 
-## Alex Schroeter
+## Alexandre Schroeter
 
 ## Leonard Philippossian
 ![](images/leo.jpg)
+
+
+
 
 ## Rita Sefraoui
 
@@ -43,6 +46,11 @@ library(kableExtra)
 ## David Pitteloud
 
 ![](images/david.jpg)
+
+My favorite hobby is fly fishing. The purpose of fly fishing is to build on a hook an imitation of a fly with natural materials such as feathers. Then with a special rod, the fly is projected by the weight of a feather and a kind of lash movement. The purpose is to imitate the landing of a fly on a stream in order to provoke the rise of a trout or any other fish. 
+
+A fact about me is that I was born in a village in the mountain with less than 50 people living all year long. In addition I do live directly on the ski slope.
+
 
 ```{r, }
 
