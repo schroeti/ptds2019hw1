@@ -12,7 +12,6 @@ output:
 
 
 ---
-test
 
 # Introduction
 
@@ -32,7 +31,7 @@ library(kableExtra)
 ## Alex Schroeter
 
 ## Leonard Philippossian
-
+![](images/leo.jpg)
 
 ## Rita Sefraoui
 
@@ -43,7 +42,7 @@ library(kableExtra)
 
 ## David Pitteloud
 
-![](images/Capture.png)
+![](images/david.jpg)
 
 ```{r, }
 
