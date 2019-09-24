@@ -1,0 +1,89 @@
+---
+title: "hmw1"
+author: "Alex Schroeter, Rita Sefraoui, Leonard Philipossian, Simon Fornerod, David Pitteloud"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+    html_document:
+        toc: True
+        toc_depth: 3 
+        number_sections: true
+        theme: cerulean
+        highlight: tango
+
+
+---
+
+
+# Introduction
+
+
+```{r, include=FALSE}
+
+library(knitr)
+library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(kableExtra)
+```
+
+
+# Group Members
+
+## Alex Schroeter
+
+## Leonard Philippossian
+
+
+## Rita Sefraoui
+
+
+## Simon Fornérod
+
+
+
+## David Pitteloud
+
+![](images/Capture.png)
+
+```{r, }
+
+```
+
+>My favorite quote is : *The moutainmen leaves his village but his village never leaves him*
+
+
+
+```{r, echo=FALSE}
+text_tbl <- data.frame(
+  Subject = c("Supply chain and its latest trend", "Programming tools", "Project in Data Analytics"),
+  Features = c(
+    " Monday 2pm-6pm ",
+    "Tuesday 8am-12am", 
+    "Friday 8am-12am"
+  )
+)
+
+kable(text_tbl) %>%
+  kable_styling(full_width = F) %>%
+  column_spec(1, bold = T, border_right = T) %>%
+  column_spec(2, border_left = T, background = "lightblue")
+
+```
+
+
+#RMarkdown Syntax
+```{r computeA, cache = TRUE}
+a <- 2
+```
+
+(d <- 2*a)
+
+```{r, cache = TRUE}
+(d <- 2*a)
+```
+(d <- 2*a)
+
+```{r, cache = TRUE, dependson = "computeA"}
+(d <- 2*a)
+```
+#references
