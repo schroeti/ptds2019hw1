@@ -72,18 +72,5 @@ kable(text_tbl) %>%
 
 
 #RMarkdown Syntax
-```{r computeA, cache = TRUE}
-a <- 2
-```
 
-(d <- 2*a)
-
-```{r, cache = TRUE}
-(d <- 2*a)
-```
-(d <- 2*a)
-
-```{r, cache = TRUE, dependson = "computeA"}
-(d <- 2*a)
-```
 #references
