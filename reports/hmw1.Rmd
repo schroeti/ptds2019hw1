@@ -107,7 +107,8 @@ text_tbl <- data.frame(
   )
 )
 
-kable(text_tbl) %>%
+kable(text_tbl, col.names = c("Class",
+                           "Day and Time")) %>%
   kable_styling(full_width = F) %>%
   column_spec(1, bold = T, border_right = T) %>%
   column_spec(2, border_left = T, background = "lightblue")
@@ -155,6 +156,45 @@ kable(text_tbl) %>%
 
 
 #RMarkdown Syntax
+
+# Normal distribution
+
+```{r , echo=FALSE}
+set.seed(1)
+x<-rnorm(100, mean = 0, sd = 1)
+meanX<-mean(x)
+medianX<-median(x)
+varianceX<-var(x)
+
+tblNorm <- data.frame(meanX, medianX, varianceX)
+
+
+kable(tblNorm, col.names = c("Mean of X", "Median of X", "Variance of X")) %>%
+  kable_styling(full_width = F) %>%
+  column_spec(1, bold = F, border_right = T) %>%
+  column_spec(2, border_left = T, background = "lightblue")
+```
+
+Our results are not the expected 0, 0 and 1. Instead we get 0.109, 0.113 and 0.807 respectively. 
+This is probably due to the fact that with 100 random numbers , we do not have a sample large enough to be representative of the theory. If we try the same with 1000 numbers we get closer, and theoretically the bigger the sample the closer we should get to 0, 0 and 1: 
+
+```{r , echo=FALSE}
+set.seed(1)
+x2<-rnorm(1000, mean = 0, sd = 1)
+meanX2<-mean(x2)
+medianX2<-median(x2)
+varianceX2<-var(x2)
+
+tblNorm2 <- data.frame(meanX2, medianX2, varianceX2)
+
+
+kable(tblNorm2, col.names = c("Mean of X2", "Median of X2", "Variance of X2")) %>%
+  kable_styling(full_width = F) %>%
+  column_spec(1, bold = F, border_right = T) %>%
+  column_spec(2, border_left = T, background = "lightblue")
+```
+
+
 
 # Equation
 
