@@ -79,6 +79,41 @@ kable(text_tbl) %>%
 
 ## Rita Sefraoui
 
+**Picture**
+```{r , echo=FALSE, fig.cap="Picture in Vienna, summer 2019", out.width = '30%', fig.align = 'center'}
+knitr::include_graphics("images/Rita.jpg")
+```
+
+**Hobby**
+
+My favorite hobbies are travelling and watching historical and fashion documentaries.
+
+A fun fact about me : I read the Harry Potter books at least 5 times each... 
+
+**My favorite quote**
+
+> *"Learning never exhausts the mind."* 
+
+**Timetable**
+```{r, echo=FALSE}
+text_tbl <- data.frame(
+  Subject = c("Programming Tools in Data Science", "Human Behavior and Evolutionary Inference",  "Text Mining", "Behavioral Economics", "Projects in Data Analytics for Decision Making"),
+  Features = c(
+    "Tuesday 8:30 am - 12 pm ",
+    "Tuesday 2:15 pm - 6:00 pm ", 
+    "Thursday 8:30 am - 12:00 pm", 
+    "Thursday 2:15 pm - 6:00 pm", 
+    "Friday 8:30 am - 12:00 pm"
+  )
+)
+
+kable(text_tbl) %>%
+  kable_styling(full_width = F) %>%
+  column_spec(1, bold = T, border_right = T) %>%
+  column_spec(2, border_left = T, background = "lightblue")
+
+```
+
 
 ## Simon Fornérod
 
