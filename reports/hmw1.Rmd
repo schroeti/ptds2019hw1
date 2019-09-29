@@ -194,6 +194,23 @@ kable(tblNorm2, col.names = c("Mean of X2", "Median of X2", "Variance of X2")) %
   column_spec(2, border_left = T, background = "lightblue")
 ```
 
+Here we represent the histogram of the distribution of x:
+
+```{r , echo=FALSE, warnings=FALSE,comment=FALSE, message=FALSE, fig.cap="Histogram of the simulation"}
+xData<-data.frame(x)
+ggplot(data=xData, 
+       aes(xData$x)) + 
+  geom_histogram(color="blue",
+                 fill="blue",
+                 alpha=.2)+
+  theme_minimal()+
+  ggtitle("Distribution of x")+
+  ylab("count")+
+  xlab(element_blank())+
+  theme(plot.title = element_text(hjust = 0.5))
+  
+
+```
 
 
 # Equation
