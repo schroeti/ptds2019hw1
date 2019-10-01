@@ -2,7 +2,6 @@
 title: "hmw1"
 author: "Alexandre Schroeter, Rita Sefraoui, Leonard Philipossian, Simon Fornerod, David Pitteloud"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-runtime: shiny
 output: 
     html_document:
         toc: True
@@ -37,7 +36,7 @@ In the last section, called *RMarkdown Syntax*, we will try to demonstrate our M
 
 ## Alexandre Schroeter
 **Picture**
-```{r pressure, echo=FALSE, fig.cap="This picture was taken in August 2019 in Mykonos.", out.width = '30%', fig.align = 'center'}
+```{r pressure, echo=FALSE, fig.cap="Mykonos, August 2019", out.width = '30%', fig.align = 'center'}
 knitr::include_graphics("../figures/alex.jpg")
 ```
 
@@ -81,7 +80,7 @@ kable(text_tbl, col.names = c("Class",
 ## Leonard Philippossian
 **Picture**
 ```{r , echo=FALSE, fig.cap="South of Italy, summer 2017", out.width = '30%', fig.align = 'center'}
-knitr::include_graphics("images/leo.jpg")
+knitr::include_graphics("../figures/leo.jpg")
 ```
 
 **Hobby**
@@ -124,7 +123,7 @@ kable(text_tbl, col.names = c("Class",
 
 **Picture**
 ```{r , echo=FALSE, fig.cap="Picture in Vienna, summer 2019", out.width = '30%', fig.align = 'center'}
-knitr::include_graphics("images/Rita.jpg")
+knitr::include_graphics("../figures/Rita.jpg")
 ```
 
 **Hobby**
@@ -163,7 +162,7 @@ kable(text_tbl, col.names = c("Class",
 ## Simon Fornerod
 **Picture**
 ```{r, echo=FALSE,fig.cap="_My father's birthday party, july 2019_",out.width = '30%', fig.align = 'center'}
-    knitr::include_graphics("images/simon.jpg")
+    knitr::include_graphics("../figures/simon.jpg")
 ```
 
 **Hobby**
@@ -338,31 +337,7 @@ print(paste0("the random number is: ",random.num ))
 
 # More Info Button
 ```{r, echo=FALSE}
-ui <- navbarPage("Hidden information", id = "tabs",
-  navbarMenu("More",
-    tabPanel("Hide Emails"), 
-    "------",
-    tabPanel("Alex","alex.schroeter@unil.ch"),
-    tabPanel("Léo","leonard.philippossian@unil.ch"),
-    tabPanel("Rita","rita.sefraouni@unil.ch"),
-    tabPanel("Simon","simon.fornerod@unil.ch"),
-    tabPanel("David","david.pitteloud@unil.ch"),
-    "------",
-    "This option allows you to display the Emails of the group members"
-  )
-)
 
-server <- function(input, output, session) {
-  observeEvent(input$hideMenu, {
-    hideTab(inputId = "tabs", target = "More")
-  })
-
-  observeEvent(input$showMenu, {
-    showTab(inputId = "tabs", target = "More")
-  })
-}
-
-shinyApp(ui, server)
 ```
 
 # Blue box
