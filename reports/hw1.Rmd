@@ -311,21 +311,21 @@ ggplot(data=xData,
 ## Cache issue 
 
 ```{r random, cache = TRUE}
-set.seed(3)
+set.seed(3) #the cache issue will appear if seed is changed 
 random.num <- runif(1) #generate a random number between 0 and 1 with uniform distribution 
 
 random.num
 
 ```
 
-##Wrong 
+###Wrong 
 ```{r, cache = TRUE}
 
 print(paste0("the random number is: ",random.num ))
 
 ```
 
-##Right 
+###Right 
 ```{r, cache = TRUE, dependson = "random"}
 
 print(paste0("the random number is: ",random.num ))
