@@ -9,7 +9,7 @@ output:
         number_sections: true
         theme: cerulean
         highlight: tango
-bibliography: bibliography.bib
+bibliography: bibliography.bibtex
 
 
 ---
@@ -382,3 +382,8 @@ summary(PlantGrowth)
 </div>
 
 # References
+* @quote1
+* @quote2
+* @quote3
+* @quote4
+* @montes
