@@ -38,7 +38,7 @@ In the last section, called *RMarkdown Syntax*, we will try to demonstrate our M
 ## Alexandre Schroeter
 **Picture**
 ```{r pressure, echo=FALSE, fig.cap="This picture was taken in August 2019 in Mykonos.", out.width = '30%', fig.align = 'center'}
-knitr::include_graphics("images/alex.jpg")
+knitr::include_graphics("../figures/alex.jpg")
 ```
 
 **Hobby**
