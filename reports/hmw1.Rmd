@@ -79,7 +79,13 @@ kable(text_tbl) %>%
 
 
 ## Leonard Philippossian
-![](images/leo.jpg)
+**Picture**
+```{r , echo=FALSE, fig.cap="South of Italy, summer 2017", out.width = '30%', fig.align = 'center'}
+knitr::include_graphics("images/leo.jpg")
+```
+
+**Hobby**
+
 I always want to understand the world better so my favorite hobby is to learn new stuff. To do so I read a lot and bother my friends with my new facts. A fun fact about programming that I just learned : A Quine is a computer program which takes no input and produces a copy of its own source code as its only output. A quine in R would be : 
 
 ```{r, }
@@ -296,6 +302,28 @@ ggplot(data=xData,
 \]
 
 \[\mathbf{A} \equiv [a_{i,j}]_{i,j = 1,\dots,p}\]
+
+## Cache issue 
+
+```{r random, cache = FALSE}
+
+random.num <- runif(1) #generate a random number between 0 and 1 with uniform distribution 
+
+random.num
+```
+
+##Wrong 
+```{r, cache = TRUE}
+
+print(paste0("the random number is: ",random.num ))
+
+```
+
+##Right 
+```{r, cache = TRUE, dependson = "random"}
+
+print(paste0("the random number is: ",random.num ))
+```
 
 
 # Quote
