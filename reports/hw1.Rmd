@@ -13,6 +13,10 @@ output:
 
 
 ---
+
+# Introduction
+
+
 ```{r, include=FALSE}
 
 library(knitr)
@@ -22,15 +26,6 @@ library(dplyr)
 library(tidyr)
 library(kableExtra)
 ```
-
-
-# Introduction
-
-
-Here is our first homework for the course *Programming Tools in Data Science*. Firstly we will present ourselves in a short video. Then a section called group member will provide more information about us. We will present our hobbies and favorite quote, and an individual picture of us will be displayed.
-
-In the last section, called *RMarkdown Syntax*, we will try to demonstrate our Markdown skills!
-
 
 
 # Group Members
@@ -79,44 +74,10 @@ kable(text_tbl) %>%
 
 
 ## Leonard Philippossian
-**Picture**
-```{r , echo=FALSE, fig.cap="South of Italy, summer 2017", out.width = '30%', fig.align = 'center'}
-knitr::include_graphics("images/leo.jpg")
-```
+![](images/leo.jpg)
 
-**Hobby**
 
-I always want to understand the world better so my favorite hobby is to learn new stuff. To do so I read a lot and bother my friends with my new facts. A fun fact about programming that I just learned : A Quine is a computer program which takes no input and produces a copy of its own source code as its only output. A quine in R would be : 
 
-```{r, }
-(function(x) substitute(x(x)))(function(x) substitute(x(x))) 
-```
-
-A fact about me is that I traveled alone around the world with my backpack for one year. During my time in Iran I crossed illegaly the iranien-iraki border with kurdish that were smuggling illegaly alcohol in Iran. 
-
->My favorite quote is : *Alea jacta est*
-
-**Timetable**
-
-```{r, echo=FALSE}
-text_tbl <- data.frame(
-  Subject = c("Competitive Strategy in the Digital era", "Supply chain and its latest trend", "Programming Tools in Data Science","Unethical decision making", "Projects in Data Analytics for Decision Making"),
-  Features = c(
-    "Monday 8:30 am - 12:00 am",
-    "Monday 2:00 pm - 6:00 pm",
-    "Tuesday 8:00 am - 12:00 am",
-    "Wednesday 8:30 am - 12:00 pm",
-    "Friday 8:00 am - 12:00 am"
-  )
-)
-
-kable(text_tbl, col.names = c("Class",
-                           "Day and Time")) %>%
-  kable_styling(full_width = F) %>%
-  column_spec(1, bold = T, border_right = T) %>%
-  column_spec(2, border_left = T, background = "lightblue")
-
-```
 
 ## Rita Sefraoui
 
@@ -156,8 +117,6 @@ kable(text_tbl, col.names = c("Class",
 
 ```
 
-
-
 ## Simon Fornerod
 **Picture**
 ```{r, echo=FALSE,fig.cap="_My father's birthday party, july 2019_", fig.align='center'}
@@ -191,43 +150,34 @@ kable(text_tbl, col.names = c("Subject",
 
 ```
 
-
 ## David Pitteloud
 
+![](images/david.jpg)
 
-**Picture**
+My favorite hobby is fly fishing. The purpose of fly fishing is to build on a hook an imitation of a fly with natural materials such as feathers. Then with a special rod, the fly is projected by the weight of a feather and a kind of lash movement. The purpose is to imitate the landing of a fly on a stream in order to provoke the rise of a trout or any other fish. 
 
-```{r , echo=FALSE, fig.cap="This picture was taken in Amsterdam, autumn 2017", out.width = '30%', fig.align = 'center'}
-knitr::include_graphics("images/david.jpg")
+A fact about me is that I was born in a village in the mountain with less than 50 people living all year long. In addition I do live directly on the ski slope.
+
+
+```{r, }
+
 ```
 
-**Hobby**
-
-My favorite hobby is fly fishing. The purpose of fly fishing is to build on a hook an imitation of an insect with natural materials such as feathers. Then with a special rod, the fly is projected by the weight of a lather and a kind of lash movement. The purpose is to imitate the landing of a fly on a stream in order to provoke an attack of a trout or any other fish. 
-
-A fact about me is that I was born in a village in the mountain with less than 50 people living all year long. In addition, I do live directly on the ski slope.
+>My favorite quote is : *The moutainmen leaves his village but his village never leaves him*
 
 
-**My favorite quote** 
->*"The moutainmen leaves his village but his village never leaves him"*
-
-
-**Timetable**
 
 ```{r, echo=FALSE}
 text_tbl <- data.frame(
-  Subject = c("Competitive Strategy in the Digital era", "Supply chain and its latest trend", "Programming Tools in Data Science","Unethical decision making", "Projects in Data Analytics for Decision Making"),
+  Subject = c("Supply chain and its latest trend", "Programming tools", "Project in Data Analytics"),
   Features = c(
-    "Monday 8:30 am - 12:00 am",
-    "Monday 2:00 pm - 6:00 pm",
-    "Tuesday 8:00 am - 12:00 am",
-    "Wednesday 8:30 am - 12:00 pm",
-    "Friday 8:00 am - 12:00 am"
+    " Monday 2pm-6pm ",
+    "Tuesday 8am-12am", 
+    "Friday 8am-12am"
   )
 )
 
-kable(text_tbl, col.names = c("Class",
-                           "Day and Time")) %>%
+kable(text_tbl) %>%
   kable_styling(full_width = F) %>%
   column_spec(1, bold = T, border_right = T) %>%
   column_spec(2, border_left = T, background = "lightblue")
@@ -235,9 +185,9 @@ kable(text_tbl, col.names = c("Class",
 ```
 
 
-# RMarkdown Syntax
+#RMarkdown Syntax
 
-## Normal distribution
+# Normal distribution
 
 ```{r , echo=FALSE}
 set.seed(1)
@@ -293,7 +243,7 @@ ggplot(data=xData,
 ```
 
 
-## Equation
+# Equation
 
 \[\mathbb{E}\left[var\Big\{\mathbf{v_1}\Big(\mathbf{\boldsymbol{\hat\theta}},n\Big) \Big|\mathbf{\boldsymbol{\hat \theta}}\Big\}\right]
 = var\{\mathbf{v_1} (\mathbf{\boldsymbol{\hat \theta_0}}), n\} +
@@ -302,29 +252,6 @@ ggplot(data=xData,
 \]
 
 \[\mathbf{A} \equiv [a_{i,j}]_{i,j = 1,\dots,p}\]
-
-## Cache issue 
-
-```{r random, cache = TRUE}
-set.seed(3)
-random.num <- runif(1) #generate a random number between 0 and 1 with uniform distribution 
-
-random.num
-
-```
-
-##Wrong 
-```{r, cache = TRUE}
-
-print(paste0("the random number is: ",random.num ))
-
-```
-
-##Right 
-```{r, cache = TRUE, dependson = "random"}
-
-print(paste0("the random number is: ",random.num ))
-```
 
 
 # Quote
@@ -371,4 +298,6 @@ summary(PlantGrowth)
 ```
 </div>
 
-#References
+
+
+
