@@ -309,8 +309,9 @@ ggplot(data=xData,
 \[\mathbf{A} \equiv [a_{i,j}]_{i,j = 1,\dots,p}\]
 
 ## Cache issue 
-
+We discovered that the cache issue emerge only when using knitr and disappear when running with shiny 
 ```{r random, cache = TRUE}
+
 set.seed(3) #the cache issue will appear if seed is changed 
 random.num <- runif(1) #generate a random number between 0 and 1 with uniform distribution 
 
