@@ -9,6 +9,7 @@ output:
         number_sections: true
         theme: cerulean
         highlight: tango
+bibliography: bibliography.bib
 
 
 ---
@@ -221,7 +222,7 @@ A fact about me is that I was born in a village in the mountain with less than 5
 
 **My favorite quote** 
 
-> *"The moutainmen leaves his village but his village never leaves him"*
+> *"The moutain man leaves his village but his village never leaves him"*
 
 
 **Timetable**
