@@ -78,7 +78,15 @@ kable(text_tbl) %>%
 
 ## Leonard Philippossian
 ![](images/leo.jpg)
+I always want to understand the world better so my favorite hobby is to learn new stuff. To do so I read a lot and bother my friends with my new facts. A fun fact about programming that I just learned : A Quine is a computer program which takes no input and produces a copy of its own source code as its only output. A quine in R would be : 
 
+```{r, }
+(function(x) substitute(x(x)))(function(x) substitute(x(x))) 
+```
+
+A fact about me is that I traveled alone around the world with my backpack for one year. During my time in Iran I crossed illegaly the iranien-iraki border with kurdish that were smuggling illegaly alcohol in Iran. 
+
+>My favorite quote is : *Alea jacta est*
 
 
 
