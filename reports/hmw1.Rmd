@@ -88,7 +88,27 @@ A fact about me is that I traveled alone around the world with my backpack for o
 
 >My favorite quote is : *Alea jacta est*
 
+**Timetable**
 
+```{r, echo=FALSE}
+text_tbl <- data.frame(
+  Subject = c("Competitive Strategy in the Digital era", "Supply chain and its latest trend", "Programming Tools in Data Science","Unethical decision making", "Projects in Data Analytics for Decision Making"),
+  Features = c(
+    "Monday 8:30 am - 12:00 am",
+    "Monday 2:00 pm - 6:00 pm",
+    "Tuesday 8:00 am - 12:00 am",
+    "Wednesday 8:30 am - 12:00 pm",
+    "Friday 8:00 am - 12:00 am"
+  )
+)
+
+kable(text_tbl, col.names = c("Class",
+                           "Day and Time")) %>%
+  kable_styling(full_width = F) %>%
+  column_spec(1, bold = T, border_right = T) %>%
+  column_spec(2, border_left = T, background = "lightblue")
+
+```
 
 ## Rita Sefraoui
 
