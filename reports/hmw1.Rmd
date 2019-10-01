@@ -272,11 +272,12 @@ ggplot(data=xData,
 
 ## Cache issue 
 
-```{r random, cache = FALSE}
-
+```{r random, cache = TRUE}
+set.seed(3)
 random.num <- runif(1) #generate a random number between 0 and 1 with uniform distribution 
 
 random.num
+
 ```
 
 ##Wrong 
