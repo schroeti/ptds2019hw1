@@ -1,5 +1,5 @@
 ---
-title: "hmw1"
+title: "Homework 1"
 author: "Alexandre Schroeter, Rita Sefraoui, Leonard Philipossian, Simon Fornerod, David Pitteloud"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
@@ -26,10 +26,18 @@ library(kableExtra)
 # Introduction
 
 
-Here is our first homework for the course *Programming Tools in Data Science*. Firstly we will present ourselves in a short video. Then a section called group member will provide more information about us. We will present our hobbies and favorite quote, and an individual picture of us will be displayed.
+Here is our first homework for the course *Programming Tools in Data Science*. 
 
-In the last section, called *RMarkdown Syntax*, we will try to demonstrate our Markdown skills!
+Firstly, we will present our group in a short video. Then a section called group member will provide more information about us. Each of us will present his/her hobbies and favorite quote as well as an individual picture.
 
+In the last section, called *RMarkdown Syntax*, we will try to demonstrate our RMarkdown skills!
+
+
+<div style="text-align:center;">
+<video width="640" height="480" controls>
+  <source src="../figures/ptdsvid.mov" type="video/mp4">
+</video>
+</div>
 
 
 # Group Members
@@ -200,7 +208,7 @@ kable(text_tbl, col.names = c("Subject",
 
 **Picture**
 
-```{r , echo=FALSE, fig.cap="This picture was taken in Amsterdam, autumn 2017", out.width = '30%', fig.align = 'center'}
+```{r , echo=FALSE, fig.cap="Amsterdam, autumn 2017", out.width = '30%', fig.align = 'center'}
 knitr::include_graphics("images/david.jpg")
 ```
 
@@ -242,6 +250,7 @@ kable(text_tbl, col.names = c("Class",
 # RMarkdown Syntax
 
 ## Normal distribution
+Let us define a random variable $X \sim \mathcal{N}(0,1)$ and 2 samples; $S_1$ and $S_2$ whose sizes are respectively 100 and 1000. 
 
 ```{r , echo=FALSE}
 set.seed(1)
@@ -253,14 +262,14 @@ varianceX<-var(x)
 tblNorm <- data.frame(meanX, medianX, varianceX)
 
 
-kable(tblNorm, col.names = c("Mean of X", "Median of X", "Variance of X")) %>%
-  kable_styling(full_width = F) %>%
-  column_spec(1, bold = F, border_right = T) %>%
-  column_spec(2, border_left = T, background = "lightblue")
+kable(tblNorm, col.names = c("Mean of $S_1$", "Median of $S_1$", "Variance of $S_1$")) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F) %>%
+  column_spec(1, bold = F) %>%
+  column_spec(2, background = "orange")
 ```
 
 Our results are not the expected 0, 0 and 1. Instead we get 0.109, 0.113 and 0.807 respectively. 
-This is probably due to the fact that with 100 random numbers , we do not have a sample large enough to be representative of the theory. If we try the same with 1000 numbers we get closer, and theoretically the bigger the sample the closer we should get to 0, 0 and 1: 
+This is probably due to the fact that with 100 random numbers , we do not have a sample large enough to be representative of the theory. If we try the same with 1000 numbers we get closer, and theoretically the bigger the sample the closer we should get to 0 and 1: 
 
 ```{r , echo=FALSE}
 set.seed(1)
@@ -272,15 +281,16 @@ varianceX2<-var(x2)
 tblNorm2 <- data.frame(meanX2, medianX2, varianceX2)
 
 
-kable(tblNorm2, col.names = c("Mean of X2", "Median of X2", "Variance of X2")) %>%
-  kable_styling(full_width = F) %>%
-  column_spec(1, bold = F, border_right = T) %>%
-  column_spec(2, border_left = T, background = "lightblue")
+kable(tblNorm2, col.names = c("Mean of $S_2$", "Median of $S_2$", "Variance of $S_2$")) %>%
+  kable_styling(bootstrap_options = "striped",full_width = F) %>%
+  column_spec(1, bold = F) %>%
+  column_spec(2,background = "orange")
 ```
 
-Here we represent the histogram of the distribution of x:
+Here we represent the histogram of the distribution of $X$:
 
-```{r , echo=FALSE, warnings=FALSE,comment=FALSE, message=FALSE, fig.cap="Histogram of the simulation"}
+```{r , echo=FALSE, warnings=FALSE,comment=FALSE, message=FALSE, fig.cap="Histogram of the simulation", fig.align='center'}
+
 xData<-data.frame(x)
 ggplot(data=xData, 
        aes(xData$x)) + 
@@ -288,8 +298,8 @@ ggplot(data=xData,
                  fill="blue",
                  alpha=.2)+
   theme_minimal()+
-  ggtitle("Distribution of x")+
-  ylab("count")+
+  ggtitle("Distribution of X")+
+  ylab("Count")+
   xlab(element_blank())+
   theme(plot.title = element_text(hjust = 0.5))
   
@@ -305,7 +315,7 @@ ggplot(data=xData,
 = var\{\mathbf{v_1}(\boldsymbol{\theta_0}, n)\} + \mathcal{O}_p(n^{-2})
 \]
 
-\[\mathbf{A} \equiv [a_{i,j}]_{i,j = 1,\dots,p}\]
+\[\Large \mathbf{A} \equiv [a_{i,j}]_{i,j = 1,\dots,p}\]
 
 ## Cache issue 
 We discovered that the cache issue emerge only when using knitr and disappear when running with shiny 
@@ -335,10 +345,28 @@ print(paste0("the random number is: ",random.num ))
 # Quote
 ><span style="color:blue">*"Vérité dans un temps, erreur dans un autre.”, Charles de Montesquieu*</span>
 
-# More Info Button
+# More info button
 ```{r, echo=FALSE}
 
 ```
+<script>
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+ 
+<button onclick="myFunction()">More info ? Click here</button>
+ 
+<div id="myDIV">
+ 
+We were able to use some HTML and JavaScript to create this toggle. 
+ 
+</div>
 
 # Blue box
 <style>
@@ -352,4 +380,4 @@ summary(PlantGrowth)
 ```
 </div>
 
-#References
+# References
