@@ -57,15 +57,15 @@ text_tbl <- data.frame(
   Subject = c("Programming Tools in Data Science","Unethical Decision Making (Basics)", "Fraud Analytics and Process Mining 2019",  "Text Mining", "Behavioral Economics", "Projects in Data Analytics for Decision Making"),
   Features = c(
     "Tuesday 8:30 am - 12 pm ",
-    "Wednesday 10:15 am - 11:45 am (Sep 18, Oct 4, Oct 30)", 
+    "Wednesday 10:15 am - 11:45 am", 
     "Wednesday 8:30 am - 12:00 pm",
     "Thursday 8:30 am - 12:00 pm", 
     "Thursday 2:15 pm - 6:00 pm", 
     "Friday 8:30 am - 12:00 pm"
   )
 )
-
-kable(text_tbl) %>%
+kable(text_tbl, col.names = c("Class",
+                           "Day and Time")) %>%
   kable_styling(full_width = F) %>%
   column_spec(1, bold = T, border_right = T) %>%
   column_spec(2, border_left = T, background = "lightblue")
@@ -94,7 +94,9 @@ I always want to understand the world better so my favorite hobby is to learn ne
 
 A fact about me is that I traveled alone around the world with my backpack for one year. During my time in Iran I crossed illegaly the iranien-iraki border with kurdish that were smuggling illegaly alcohol in Iran. 
 
->My favorite quote is : *Alea jacta est*
+**My favorite quote**
+
+> *"Alea jacta est"*
 
 **Timetable**
 
@@ -160,7 +162,7 @@ kable(text_tbl, col.names = c("Class",
 
 ## Simon Fornerod
 **Picture**
-```{r, echo=FALSE,fig.cap="_My father's birthday party, july 2019_", fig.align='center'}
+```{r, echo=FALSE,fig.cap="_My father's birthday party, july 2019_",out.width = '30%', fig.align = 'center'}
     knitr::include_graphics("images/simon.jpg")
 ```
 
@@ -168,7 +170,9 @@ kable(text_tbl, col.names = c("Class",
 I like sport in general and I therefore practice a certain number of them. Indeed, I play football, tennis and also running.
 I am also a music lover, unfortunately I don't have the musical talent to play it but I enjoy going to concerts or going to festivals.
 
->My favorite quote is : *"Per Aspera Ad Astra"*
+**My favorite quote**
+
+> *"Per Aspera Ad Astra"*
 
 **Timetable**
 ```{r, echo=FALSE}
@@ -209,7 +213,8 @@ A fact about me is that I was born in a village in the mountain with less than 5
 
 
 **My favorite quote** 
->*"The moutainmen leaves his village but his village never leaves him"*
+
+> *"The moutainmen leaves his village but his village never leaves him"*
 
 
 **Timetable**
