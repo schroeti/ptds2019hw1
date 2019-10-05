@@ -63,29 +63,20 @@ A fact about me: On another level, I am interested in miniature trains. I used t
 ```{r, echo=FALSE}
 text_tbl <- data.frame(
   Class = c("Programming Tools in Data Science","Unethical Decision Making (Basics)", "Fraud Analytics and Process Mining 2019",  "Text Mining", "Behavioral Economics", "Projects in Data Analytics for Decision Making"),
-  Day = c(
-    "Tuesday",
-    "Wednesday", 
-    "Wednesday",
-    "Thursday", 
-    "Thursday", 
-    "Friday"
-  ),
-  Time = c(
-    "8:30 am - 12:00 pm ",
-    "10:15 am - 11:45 am",
-    "8:30 am - 12:00 pm",
-    "8:30 am - 12:00 pm", 
-    "2:15 pm - 6:00 pm", 
-    "8:30 am - 12:00 pm"
+  Schedule = c(
+    "Tuesday 8:30 am - 12:00 pm ",
+    "Wednesday 10:15 am - 11:45 am", 
+    "Wednesday 8:30 am - 12:00 pm",
+    "Thursday 8:30 am - 12:00 pm", 
+    "Thursday 2:15 pm - 6:00 pm", 
+    "Friday 8:30 am - 12:00 pm"
   )
-) 
+)
 
 kable(text_tbl) %>%
   kable_styling(c("striped", "bordered"), full_width = F) %>%
-  column_spec(1, bold = T, border_right = T) %>%
-  column_spec(2, border_right = FALSE) %>% 
-  column_spec(3, border_left = TRUE)
+  column_spec(1, bold = T, border_right = TRUE) %>%
+  column_spec(2, border_right = TRUE)
 
 
 ```
@@ -121,27 +112,20 @@ A fact about me is that I traveled alone around the world with my backpack for o
 ```{r, echo=FALSE}
 text_tbl <- data.frame(
   Class = c("Competitive Strategy in the Digital era", "Supply chain and its latest trend", "Programming Tools in Data Science","Unethical decision making", "Projects in Data Analytics for Decision Making"),
-  Day = c(   
-    "Monday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Friday"),
-  Time = c(
-    "8:30 am - 12:00 am",
-    "2:00 pm - 6:00 pm",
-    "8:00 am - 12:00 am",
-    "8:30 am - 12:00 pm",
-    "8:00 am - 12:00 am")
+  Schedule = c(   
+    "Monday 8:30 am - 12:00 am",
+    "Monday 2:15 pm - 6:00 pm",
+    "Tuesday 8:30 am - 12:00 am",
+    "Wednesday 10:15 am - 12:00 pm",
+    "Friday 8:30 am - 12:00 am"
+    )
 )
-
-
-
+ 
 kable(text_tbl) %>%
   kable_styling(c("striped", "bordered"), full_width = F) %>%
-  column_spec(1, bold = T, border_right = T) %>%
-  column_spec(2, border_right = FALSE) %>% 
-  column_spec(3, border_left = TRUE)
+  column_spec(1, bold = T, border_right = TRUE) %>%
+  column_spec(2, border_right = TRUE)
+
 
 ```
 
@@ -166,30 +150,20 @@ A fun fact about me : I read the Harry Potter books at least 5 times each...
 ```{r, echo=FALSE}
 text_tbl <- data.frame(
   Class = c("Programming Tools in Data Science", "Human Behavior and Evolutionary Inference",  "Text Mining", "Behavioral Economics", "Projects in Data Analytics for Decision Making"),
-  Day = c(
-    "Tuesday",
-    "Tuesday", 
-    "Thursday", 
-    "Thursday", 
-    "Friday"
-  ),
-  Time = c( 
-  "8:30 am - 12:00 pm ",
-  "2:15 pm - 6:00 pm ", 
-  "8:30 am - 12:00 pm", 
-  "2:15 pm - 6:00 pm", 
-  "8:30 am - 12:00 pm"
-    
+  Schedule = c(
+    "Tuesday 8:30 am - 12:00 pm",
+    "Tuesday 2:15 pm - 6:00 pm", 
+    "Thursday 8:30 am - 12:00 pm", 
+    "Thursday 2:15 pm - 6:00 pm", 
+    "Friday 8:30 am - 12:00 pm"
   )
 )
 
 
 kable(text_tbl) %>%
   kable_styling(c("striped", "bordered"), full_width = F) %>%
-  column_spec(1, bold = T, border_right = T) %>%
-  column_spec(2, border_right = FALSE) %>% 
-  column_spec(3, border_left = TRUE)
-
+  column_spec(1, bold = T, border_right = TRUE) %>%
+  column_spec(2, border_right = TRUE)
 ```
 
 
@@ -212,31 +186,20 @@ I am also a music lover, unfortunately I don't have the musical talent to play i
 ```{r, echo=FALSE}
 text_tbl <- data.frame(
   Class = c("Programming Tools in Data Science", "Computational Complexity",  "Text Mining", "Stratégies Digitales", "Projects in Data Analytics for Decision Making"),
-  Day = c(
-    "Tuesday",
-    "Tuesday", 
-    "Thursday", 
-    "Thursday", 
-    "Friday"
-  ),
-  Time = c(
-     "8:30 am - 12:00 pm ",
-    "2:15 pm - 6:00 pm ", 
-    "8:40 am - 12:00 pm",
-    "2:15 pm - 6:00 pm", 
-    "8:30 am - 12:00 pm"
-    
+  Schedule = c(
+    "Tuesday 8:30 am - 12:00 pm",
+    "Tuesday 2:15 pm - 6:00 pm", 
+    "Thursday 8:30 am - 12:00 pm", 
+    "Thursday 2:15 pm - 6:00 pm", 
+    "Friday 8:30 am - 12:00 pm"
   )
 )
 
 
 kable(text_tbl) %>%
   kable_styling(c("striped", "bordered"), full_width = F) %>%
-  column_spec(1, bold = T, border_right = T) %>%
-  column_spec(2, border_right = FALSE) %>% 
-  column_spec(3, border_left = TRUE)
-
-
+  column_spec(1, bold = T, border_right = TRUE) %>%
+  column_spec(2, border_right = TRUE)
 ```
 
 
@@ -258,7 +221,7 @@ A fact about me is that I was born in a village in the mountain with less than 5
 
 **My favorite quote** 
 
-> *"The moutain man leaves his village but his village never leaves him"*
+> *"Somebody just back of you while you are fishing is as bad as someone looking over your shoulder while you write a letter to your girl."*
 
 
 **Timetable**
@@ -266,28 +229,19 @@ A fact about me is that I was born in a village in the mountain with less than 5
 ```{r, echo=FALSE}
 text_tbl <- data.frame(
   Class = c("Competitive Strategy in the Digital era", "Supply chain and its latest trend", "Programming Tools in Data Science","Unethical decision making", "Projects in Data Analytics for Decision Making"),
-  Day = c(   
-    "Monday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Friday"),
-  Time = c(
-    "8:30 am - 12:00 am",
-    "2:00 pm - 6:00 pm",
-    "8:00 am - 12:00 am",
-    "8:30 am - 12:00 pm",
-    "8:00 am - 12:00 am")
+  Schedule = c(   
+    "Monday 8:30 am - 12:00 am",
+    "Monday 2:15 pm - 6:00 pm",
+    "Tuesday 8:30 am - 12:00 am",
+    "Wednesday 10:15 am - 12:00 pm",
+    "Friday 8:30 am - 12:00 am"
+    )
 )
-
-
-
+ 
 kable(text_tbl) %>%
   kable_styling(c("striped", "bordered"), full_width = F) %>%
-  column_spec(1, bold = T, border_right = T) %>%
-  column_spec(2, border_right = FALSE) %>% 
-  column_spec(3, border_left = TRUE)
-
+  column_spec(1, bold = T, border_right = TRUE) %>%
+  column_spec(2, border_right = TRUE)
 
 ```
 
@@ -432,4 +386,5 @@ summary(PlantGrowth)
 * @quote2
 * @quote3
 * @quote4
+* @quote5
 * @montes
