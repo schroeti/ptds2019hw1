@@ -31,7 +31,7 @@ Here is our first homework for the course *Programming Tools in Data Science*.
 
 Firstly, we will present our group in a short video. Then a section called group member will provide more information about us. Each of us will present his/her hobbies and favorite quote as well as an individual picture.
 
-In the last section, called *RMarkdown Syntax*, we will try to demonstrate our RMarkdown skills!
+In the last section, called *RMarkdown Syntax*, we will try to demonstrate our RMarkdown skills by dealing with a cache issue, simulating some samples from a normal distribution, adding some equations and quotes!
 
 
 <div style="text-align:center;">
@@ -318,7 +318,7 @@ print(paste0("the random number is: ",random.num ))
 
 print(paste0("the random number is: ",random.num ))
 ```
-
+  
 
 ## Normal distribution
 Let us define a random variable $Y \sim \mathcal{N}(0,1)$ and 2 samples; $X_1$ and $X_2$ whose sizes are respectively 100 and 1000. 
@@ -340,7 +340,7 @@ kable(tblNorm, col.names = c("Mean of $X_1$", "Median of $X_1$", "Variance of $X
 ```
 
 Our results are not the expected 0, 0 and 1. Instead we get 0.109, 0.113 and 0.807 respectively. 
-This is probably due to the fact that with 100 random numbers , we do not have a sample large enough to be representative of the theory. If we try the same with 1000 numbers we get closer, and theoretically the bigger the sample the closer we should get to 0 and 1: 
+This is probably due to the fact that with 100 random numbers , we do not have a sample large enough to be representative of the theory. If we try the same with 1000 numbers we get closer, and theoretically the bigger the sample the closer we should get to 0, 0 and 1: 
 
 ```{r , echo=FALSE}
 set.seed(1)
@@ -369,7 +369,7 @@ ggplot(data=xData,
                  fill="blue",
                  alpha=.2)+
   theme_minimal()+
-  ggtitle("Empirical distribution of X1")+
+  ggtitle(bquote("Empirical distribution of" ~ X[1]))+
   ylab("Count")+
   xlab(element_blank())+
   theme(plot.title = element_text(hjust = 0.5))
