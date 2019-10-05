@@ -51,7 +51,7 @@ knitr::include_graphics("../figures/alex.jpg")
 
 **Hobby**
 
-My favorite hobby is working out. It depends on the time of the year and also if I am on holiday or not but I usually train 4-5 times a week. I have been working with a coach for 2+ years. 
+My favorite hobby is working out. It depends on the time of the year and also if I am on holiday or not, but I usually train 4-5 times a week. I have been working with a coach for 2+ years. 
 
 A fact about me: On another level, I am interested in miniature trains. I used to have a train set at my parents'.
 
@@ -294,73 +294,6 @@ kable(text_tbl) %>%
 
 # RMarkdown Syntax
 
-## Normal distribution
-Let us define a random variable $X \sim \mathcal{N}(0,1)$ and 2 samples; $S_1$ and $S_2$ whose sizes are respectively 100 and 1000. 
-
-```{r , echo=FALSE}
-set.seed(1)
-x<-rnorm(100, mean = 0, sd = 1)
-meanX<-mean(x)
-medianX<-median(x)
-varianceX<-var(x)
-
-tblNorm <- data.frame(meanX, medianX, varianceX)
-
-
-kable(tblNorm, col.names = c("Mean of $S_1$", "Median of $S_1$", "Variance of $S_1$")) %>%
-  kable_styling(bootstrap_options = "striped", full_width = F) %>%
-  column_spec(1, bold = F) %>%
-  column_spec(2, background = "orange")
-```
-
-Our results are not the expected 0, 0 and 1. Instead we get 0.109, 0.113 and 0.807 respectively. 
-This is probably due to the fact that with 100 random numbers , we do not have a sample large enough to be representative of the theory. If we try the same with 1000 numbers we get closer, and theoretically the bigger the sample the closer we should get to 0 and 1: 
-
-```{r , echo=FALSE}
-set.seed(1)
-x2<-rnorm(1000, mean = 0, sd = 1)
-meanX2<-mean(x2)
-medianX2<-median(x2)
-varianceX2<-var(x2)
-
-tblNorm2 <- data.frame(meanX2, medianX2, varianceX2)
-
-
-kable(tblNorm2, col.names = c("Mean of $S_2$", "Median of $S_2$", "Variance of $S_2$")) %>%
-  kable_styling(bootstrap_options = "striped",full_width = F) %>%
-  column_spec(1, bold = F) %>%
-  column_spec(2,background = "orange")
-```
-
-Here we represent the histogram of the distribution of $X$:
-
-```{r , echo=FALSE, warnings=FALSE,comment=FALSE, message=FALSE, fig.cap="Histogram of the simulation", fig.align='center'}
-
-xData<-data.frame(x)
-ggplot(data=xData, 
-       aes(xData$x)) + 
-  geom_histogram(color="blue",
-                 fill="blue",
-                 alpha=.2)+
-  theme_minimal()+
-  ggtitle("Distribution of X")+
-  ylab("Count")+
-  xlab(element_blank())+
-  theme(plot.title = element_text(hjust = 0.5))
-  
-
-```
-
-
-## Equation
-
-\[\mathbb{E}\left[var\Big\{\mathbf{v_1}\Big(\mathbf{\boldsymbol{\hat\theta}},n\Big) \Big|\mathbf{\boldsymbol{\hat \theta}}\Big\}\right]
-= var\{\mathbf{v_1} (\mathbf{\boldsymbol{\hat \theta_0}}), n\} +
-\mathbb{E} \left[ \mathcal{O}_p \Big\{ \mathbf{D_1} (\boldsymbol{\theta^*}, n)(\boldsymbol{\hat\theta}-\boldsymbol{\theta_0}), \cdots, \mathbf{D_p}(\boldsymbol{\theta^*}, n)(\boldsymbol{\hat \theta} - \boldsymbol{\theta_0}) \Big\}\right] 
-= var\{\mathbf{v_1}(\boldsymbol{\theta_0}, n)\} + \mathcal{O}_p(n^{-2})
-\]
-
-\[\Large \mathbf{A} \equiv [a_{i,j}]_{i,j = 1,\dots,p}\]
 
 ## Cache issue 
 We discovered that the cache issue emerge only when using knitr and disappear when running with shiny 
@@ -385,6 +318,75 @@ print(paste0("the random number is: ",random.num ))
 
 print(paste0("the random number is: ",random.num ))
 ```
+
+
+## Normal distribution
+Let us define a random variable $Y \sim \mathcal{N}(0,1)$ and 2 samples; $X_1$ and $X_2$ whose sizes are respectively 100 and 1000. 
+
+```{r , echo=FALSE}
+set.seed(1)
+x<-rnorm(100, mean = 0, sd = 1)
+meanX<-mean(x)
+medianX<-median(x)
+varianceX<-var(x)
+
+tblNorm <- data.frame(meanX, medianX, varianceX)
+
+
+kable(tblNorm, col.names = c("Mean of $X_1$", "Median of $X_1$", "Variance of $X_1$")) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F) %>%
+  column_spec(1, bold = F) %>%
+  column_spec(2, background = "orange")
+```
+
+Our results are not the expected 0, 0 and 1. Instead we get 0.109, 0.113 and 0.807 respectively. 
+This is probably due to the fact that with 100 random numbers , we do not have a sample large enough to be representative of the theory. If we try the same with 1000 numbers we get closer, and theoretically the bigger the sample the closer we should get to 0 and 1: 
+
+```{r , echo=FALSE}
+set.seed(1)
+x2<-rnorm(1000, mean = 0, sd = 1)
+meanX2<-mean(x2)
+medianX2<-median(x2)
+varianceX2<-var(x2)
+
+tblNorm2 <- data.frame(meanX2, medianX2, varianceX2)
+
+
+kable(tblNorm2, col.names = c("Mean of $X_2$", "Median of $X_2$", "Variance of $X_2$")) %>%
+  kable_styling(bootstrap_options = "striped",full_width = F) %>%
+  column_spec(1, bold = F) %>%
+  column_spec(2,background = "orange")
+```
+
+Here we represent the histogram of $X_1$:
+
+```{r , echo=FALSE, warnings=FALSE,comment=FALSE, message=FALSE, fig.cap="Histogram of the simulation", fig.align='center'}
+
+xData<-data.frame(x)
+ggplot(data=xData, 
+       aes(xData$x)) + 
+  geom_histogram(color="blue",
+                 fill="blue",
+                 alpha=.2)+
+  theme_minimal()+
+  ggtitle("Empirical distribution of X1")+
+  ylab("Count")+
+  xlab(element_blank())+
+  theme(plot.title = element_text(hjust = 0.5))
+  
+
+```
+
+
+## Equation
+
+\[\mathbb{E}\left[var\Big\{\mathbf{v_1}\Big(\mathbf{\boldsymbol{\hat\theta}},n\Big) \Big|\mathbf{\boldsymbol{\hat \theta}}\Big\}\right]
+= var\{\mathbf{v_1} (\mathbf{\boldsymbol{\theta_0}}), n\} +
+\mathbb{E} \left[ \mathcal{O}_p \Big\{ \mathbf{D_1} (\boldsymbol{\theta^*}, n)(\boldsymbol{\hat\theta}-\boldsymbol{\theta_0}), \cdots, \mathbf{D_p}(\boldsymbol{\theta^*}, n)(\boldsymbol{\hat \theta} - \boldsymbol{\theta_0}) \Big\}\right] 
+= var\{\mathbf{v_1}(\boldsymbol{\theta_0}, n)\} + \mathcal{O}_p(n^{-2})
+\]
+
+\[\Large \mathbf{A} \equiv [a_{i,j}]_{i,j = 1,\dots,p}\]
 
 
 # Quote
