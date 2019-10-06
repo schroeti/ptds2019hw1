@@ -250,29 +250,48 @@ kable(text_tbl) %>%
 
 
 ## Cache issue 
-We discovered that the cache issue emerge only when using knitr and disappear when running with shiny 
-```{r random, cache = TRUE}
 
-set.seed(3) #the cache issue will appear if seed is changed 
-random.num <- runif(1) #generate a random number between 0 and 1 with uniform distribution 
+The cache issue emerge when the document Rmarkdown is generated more than once with <mark>cache = TRUE</mark> and that some change in the data or code have been introduced in-between . 
 
-random.num
+
+To show how we can have a cache issue we first set an initial seed of value 3 to generate a random number between 0 and 1 with uniform distribution. This number is 0.168.
+
+```{r random, cache = TRUE, echo=FALSE}
+
+seed <- 3 
+set.seed(seed) #the cache issue will appear if seed is changed 
+random.num <- round(runif(1), 3) #generate a random number between 0 and 1 with uniform distribution 
 
 ```
+
+The current value of the random number is <b>`r random.num`</b>. This number was generated from the seed <b>`r seed`</b>. 
+
 
 ###Wrong 
-```{r, cache = TRUE}
 
-print(paste0("the random number is: ",random.num ))
+```{r, cache = TRUE, echo=FALSE}
+
+wrong.num <- random.num
 
 ```
+The random number is <b>`r wrong.num`</b>.
+
 
 ###Right 
-```{r, cache = TRUE, dependson = "random"}
 
-print(paste0("the random number is: ",random.num ))
+```{r, cache = TRUE, dependson = "random", echo=FALSE}
+
+right.num <- random.num
+
 ```
-  
+The random number is <b>`r right.num`</b>.
+
+The Rmarkdown must be generated two time with a different seed the second time to see the cache error.
+
+On the second document we can notice that when the seed is changed to number <b>`r seed`</b> instead of 3 we get the random number <b>`r random.num`</b> which is different than 0.168. But in the Wrong section when the random number is called it's still the value 0.168. Because in the chunk the argument <mark>dependson = "random"</mark> was forgotten. 
+
+
+
 
 ## Normal distribution
 Let us define a random variable $Y \sim \mathcal{N}(0,1)$ and 2 samples; $X_1$ and $X_2$ whose sizes are respectively 100 and 1000. 
