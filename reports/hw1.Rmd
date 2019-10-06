@@ -178,9 +178,11 @@ kable(text_tbl) %>%
 I like sport in general and I therefore practice a certain number of them. Indeed, I play football, tennis and also running.
 I am also a music lover, unfortunately I don't have the musical talent to play it but I enjoy going to concerts or going to festivals.
 
+A fun fact about me : I was hitching at 5 am after a tumultuous evening, and instead of going home with a car, it was with a tractor...
+
 **My favorite quote**
 
-> *"Per Aspera Ad Astra"*
+> *"Ad Astra Per Aspera"*
 
 **Timetable**
 ```{r, echo=FALSE}
@@ -209,7 +211,7 @@ kable(text_tbl) %>%
 **Picture**
 
 ```{r , echo=FALSE, fig.cap="Amsterdam, autumn 2017", out.width = '30%', fig.align = 'center'}
-knitr::include_graphics("images/david.jpg")
+knitr::include_graphics("../figures/david.jpg")
 ```
 
 **Hobby**
